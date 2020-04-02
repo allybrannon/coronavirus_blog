@@ -1,15 +1,18 @@
 const express = require("express");
 const router = express.Router();
+const blogModel = require("../models/blogModel");
 
 /* GET home page. */
-router.get("/", function(req, res, next) {
+router.get("/", async function(req, res, next) {
+  const data = await blogModel.getallBlog();
+
   res.render("template", {
     locals: {
       title: "Blog",
       data: data
     },
     partials: {
-      partial: "partal-index"
+      partial: "partial-index"
     }
   });
 });
