@@ -11,7 +11,7 @@ class BlogModel {
 
   static async getallBlog() {
     try {
-      const response = await db.any("SELECT * FROM coronablog");
+      const response = await db.any(`SELECT * FROM coronablog`);
       return response;
     } catch (error) {
       console.error("ERROR: ", error);

@@ -4,17 +4,7 @@ const blogModel = require("../models/blogModel");
 
 /* GET home page. */
 router.get("/", async function(req, res, next) {
-  const data = await blogModel.getallBlog();
-
-  res.render("template", {
-    locals: {
-      title: "Blog",
-      data: data
-    },
-    partials: {
-      partial: "partial-index"
-    }
-  });
+  res.json("Coronavirus Blog API").status(200);
 });
 
 module.exports = router;
