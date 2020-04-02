@@ -4,7 +4,7 @@ const blogModel = require("../models/blogModel");
 
 /* GET home page. */
 router.get("/", async function(req, res, next) {
-  res.json("Coronavirus Blog API").status(200);
+  res.json("Coronavirus Bloggin").status(200);
 });
 
 router.get("/all", async function(req, res, next) {
