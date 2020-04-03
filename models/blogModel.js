@@ -18,6 +18,16 @@ class BlogModel {
       return error;
     }
   }
+  static async getId(id) {
+    try {
+      const response = await db.any(`SELECT * FROM coronablog WHERE id=${id};`);
+      console.log("individual blog", id);
+      return response;
+    } catch (error) {
+      console.error("ERROR: ", error);
+      return error;
+    }
+  }
 }
 
 module.exports = BlogModel;
